@@ -212,12 +212,12 @@
     <div class="question-box" id="q2Box">
       <p>2. What is the favorite thing about you that he loved the most?</p>
       <div class="options-grid">
-        <button class="option-btn" onclick="selectOption('nothing')">1. nothing</button>
-        <button class="option-btn" onclick="selectOption('hair')">2. hair</button>
-        <button class="option-btn" onclick="selectOption('in saree')">3. in saree</button>
-        <button class="option-btn" onclick="selectOption('biceps')">4. biceps</button>
-        <button class="option-btn" onclick="selectOption('eyes')">5. eyes</button>
-        <button class="option-btn" onclick="selectOption('gift')">6. gift</button>
+        <button class="option-btn" onclick="selectOption('nothing')">1. NOTHING</button>
+        <button class="option-btn" onclick="selectOption('hair')">2. HAIR</button>
+        <button class="option-btn" onclick="selectOption('in saree')">3. EYES</button>
+        <button class="option-btn" onclick="selectOption('biceps')">4. BICEPS</button>
+        <button class="option-btn" onclick="selectOption('eyes')">5. GIIFT</button>
+        <button class="option-btn" onclick="selectOption('gift')">6. U IN A SAREE</button>
       </div>
       <div class="error-msg" id="err2"></div>
     </div>
@@ -226,7 +226,7 @@
     <div class="question-box" id="q3Box">
       <p>3. Am I your favourite one?</p>
       <input type="text" id="ans3" class="cute-input" placeholder="Yes or No..." autocomplete="off">
-      <button class="cute-submit" onclick="checkQ3()">Submit Form 💌</button>
+      <button class="cute-submit" onclick="checkQ3()">Submit THE PAPER 💌</button>
       <div class="error-msg" id="err3"></div>
     </div>
 
@@ -234,7 +234,7 @@
     <div class="celebration-box" id="celebrationBox">
       <div class="trophy-emoji">🏆</div>
       <h3 style="color: #ff4757; margin-bottom: 8px; font-size: 1.1rem;">Application Approved! 🎉</h3>
-      <p style="font-size: 0.85rem; color: #555; margin-bottom: 15px;"> PLEASE GIVE ME A GF!</p>
+      <p style="font-size: 0.85rem; color: #555; margin-bottom: 15px;"> Certified keeper of my heart. 💖</p>
       <button class="nav-btn" onclick="navigateTo('page5.html')"> A MASSAGE FOR U 📝</button>
     </div>
   </div>
@@ -254,7 +254,7 @@
 
     function selectOption(choice) {
       const err = document.getElementById('err2');
-      if (choice === 'in saree') {
+      if (choice === 'U IN A SAREE') {
         err.innerText = "";
         document.getElementById('q2Box').classList.remove('active');
         document.getElementById('q3Box').classList.add('active');
