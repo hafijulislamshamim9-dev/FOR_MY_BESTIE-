@@ -188,6 +188,30 @@
       margin-top: 15px;
       padding: 12px;
       font-size: 1rem;
+      background-color: #ff7675;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    
+    .transition-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #fef6f9;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+      z-index: 1000;
+    }
+    
+    .transition-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
     }
   </style>
 </head>
@@ -234,8 +258,8 @@
     <div class="celebration-box" id="celebrationBox">
       <div class="trophy-emoji">🏆</div>
       <h3 style="color: #ff4757; margin-bottom: 8px; font-size: 1.1rem;">Application Approved! 🎉</h3>
-      <p style="font-size: 0.85rem; color: #555; margin-bottom: 15px;"> Certified keeper of my heart. 💖</p>
-      <button class="nav-btn" onclick="navigateTo('page5.html')"> A MASSAGE FOR U 📝</button>
+      <p style="font-size: 0.85rem; color: #555; margin-bottom: 15px;"> You are the certified keeper of my heart. 💖</p>
+      <button class="nav-btn" onclick="navigateTo('page5.html')"> A MESSAGE FOR U 📝</button>
     </div>
   </div>
 
@@ -254,7 +278,10 @@
 
     function selectOption(choice) {
       const err = document.getElementById('err2');
-      if (choice === 'u in a saree') {
+      // Clean string input to avoid hidden spacing issues
+      const cleanChoice = choice.trim().toLowerCase();
+      
+      if (cleanChoice === 'u in a saree') {
         err.innerText = "";
         document.getElementById('q2Box').classList.remove('active');
         document.getElementById('q3Box').classList.add('active');
