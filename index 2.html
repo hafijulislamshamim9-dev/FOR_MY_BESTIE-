@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Friendship Day!</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .hero-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 80vh;
+      padding: 20px;
+    }
+
+    .title-heading {
+      font-size: 2.5rem;
+      color: #ff4757;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    /* SVG Flower Garden Container */
+    .flower-garden {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 25px;
+      height: 250px;
+      margin: 20px 0;
+    }
+
+    /* SVG Flower Stem & Bloom Animation Controls */
+    .stem {
+      stroke-dasharray: 200;
+      stroke-dashoffset: 200;
+      animation: growStem 1.2s forwards ease-out;
+    }
+
+    .flower-head {
+      transform: scale(0);
+      transform-origin: center;
+      animation: bloom 0.8s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    /* Sequential Delay for Flower 1 */
+    .flower-1 .stem { animation-delay: 0.5s; }
+    .flower-1 .flower-head { animation-delay: 1.5s; }
+
+    /* Sequential Delay for Flower 2 (Center) */
+    .flower-2 .stem { animation-delay: 1.8s; }
+    .flower-2 .flower-head { animation-delay: 2.8s; }
+
+    /* Sequential Delay for Flower 3 */
+    .flower-3 .stem { animation-delay: 3.1s; }
+    .flower-3 .flower-head { animation-delay: 4.1s; }
+
+    /* Animation Keyframes */
+    @keyframes growStem {
+      to { stroke-dashoffset: 0; }
+    }
+
+    @keyframes bloom {
+      to { transform: scale(1); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .loading-text {
+      margin-top: 30px;
+      font-size: 1.1rem;
+      color: #74b9ff;
+      letter-spacing: 2px;
+      animation: pulseText 1.5s infinite alternate;
+    }
+
+    @keyframes pulseText {
+      from { opacity: 0.4; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="transition-overlay" id="overlay"></div>
+
+  <div class="hero-container">
+    <h1 class="title-heading">Happy Friendship Day, Bestie! ✨</h1>
+
+    <!-- Vector Animated Flower Garden -->
+    <div class="flower-garden">
+      
+      <!-- Flower 1 (Left) -->
+      <svg class="flower-1" width="80" height="220" viewBox="0 0 100 250">
+        <path class="stem" d="M 50,250 Q 40,150 50,80" stroke="#2ed573" stroke-width="6" fill="none" stroke-linecap="round" />
+        <g class="flower-head" style="transform-origin: 50px 80px;">
+          <circle cx="50" cy="50" r="18" fill="#ff7675" />
+          <circle cx="30" cy="80" r="18" fill="#ff7675" />
+          <circle cx="70" cy="80" r="18" fill="#ff7675" />
+          <circle cx="50" cy="110" r="18" fill="#ff7675" />
+          <circle cx="50" cy="80" r="14" fill="#ffeaa7" />
+        </g>
+      </svg>
+
+      <!-- Flower 2 (Center - Tulip/Rose Style) -->
+      <svg class="flower-2" width="100" height="250" viewBox="0 0 100 250">
+        <path class="stem" d="M 50,250 Q 65,140 50,60" stroke="#26de81" stroke-width="8" fill="none" stroke-linecap="round" />
+        <g class="flower-head" style="transform-origin: 50px 60px;">
+          <circle cx="50" cy="35" r="22" fill="#ff4757" />
+          <circle cx="25" cy="60" r="22" fill="#ff6b81" />
+          <circle cx="75" cy="60" r="22" fill="#ff6b81" />
+          <circle cx="35" cy="90" r="22" fill="#ff4757" />
+          <circle cx="65" cy="90" r="22" fill="#ff4757" />
+          <circle cx="50" cy="60" r="18" fill="#fed330" />
+        </g>
+      </svg>
+
+      <!-- Flower 3 (Right) -->
+      <svg class="flower-3" width="80" height="220" viewBox="0 0 100 250">
+        <path class="stem" d="M 50,250 Q 60,150 50,80" stroke="#2ed573" stroke-width="6" fill="none" stroke-linecap="round" />
+        <g class="flower-head" style="transform-origin: 50px 80px;">
+          <circle cx="50" cy="50" r="18" fill="#a29bfe" />
+          <circle cx="30" cy="80" r="18" fill="#a29bfe" />
+          <circle cx="70" cy="80" r="18" fill="#a29bfe" />
+          <circle cx="50" cy="110" r="18" fill="#a29bfe" />
+          <circle cx="50" cy="80" r="14" fill="#ffeaa7" />
+        </g>
+      </svg>
+
+    </div>
+
+    <p class="loading-text">Preparing something special for you...</p>
+  </div>
+
+  <script>
+    // Waits 5.5 seconds so all 3 flowers finish growing and blooming before transitioning
+    setTimeout(() => {
+      document.getElementById('overlay').classList.add('active');
+      setTimeout(() => {
+        window.location.href = 'page2.html';
+      }, 800);
+    }, 5500);
+  </script>
+</body>
+</html>
