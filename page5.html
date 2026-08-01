@@ -229,7 +229,7 @@
     yesBtn.addEventListener('touchstart', (e) => { e.preventDefault(); moveYesButton(); });
 
     function moveYesButton() {
-      if (moveCount < 6) {
+      if (moveCount < 5) {
         const x = (Math.random() - 0.5) * 140;
         const y = (Math.random() - 0.5) * 60;
         yesBtn.style.transform = `translate(${x}px, ${y}px)`;
@@ -237,7 +237,7 @@
       } else {
         yesBtn.style.display = 'none';
         noBtn.classList.add('fullscreen-no');
-        noBtn.innerText = "Hate is not for you 💖";
+        noBtn.innerText = "Hate is not for you (click the button) 💖";
       }
     }
 
